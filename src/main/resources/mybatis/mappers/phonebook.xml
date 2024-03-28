@@ -64,16 +64,9 @@
 		]]>
 	</select>
 
-	<!-- 쿼리문 작성 insert -->
-	<insert id="insert" parameterType="PersonVo">
-		<![CDATA[	
-			insert into person
-			values(null, #{name}, #{hp}, #{company})
-		]]>
-	</insert>
 	
 	<!-- insert 사용 map -->
-	<insert id="insert2" parameterType="PersonVo">
+	<insert id="insert" parameterType="PersonVo">
 		<![CDATA[	
 			insert into person
 			values(null, #{name}, #{hp}, #{company})
