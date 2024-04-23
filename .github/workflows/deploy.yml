@@ -4,7 +4,7 @@ name: Deploy PhonebookApp #워크플로워 이름
   #workflow_dispatch:
  
 on
-  push:
+   push:
     branches:
       - master # 또는 프로젝트의 기본 브랜치명, master라는 이름으로 깃허브에 push가 되면 작동
 
