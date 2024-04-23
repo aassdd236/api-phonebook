@@ -52,7 +52,7 @@ public class PhonebookController {
 
 		phonebookService.exeModify(personVo);
 
-		return JsonResult.success(personVo);
+		return JsonResult.success(personVo);    
 	}
 
 	// 수정폼
