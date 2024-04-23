@@ -32,6 +32,7 @@ public class PhonebookController {
 
 		return JsonResult.success(personList);
 	}
+	
 
 	@PostMapping("/api/write")
 	public JsonResult write(@RequestBody PersonVo personVo) {
