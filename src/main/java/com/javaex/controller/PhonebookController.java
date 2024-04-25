@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -46,7 +47,7 @@ public class PhonebookController {
 	
 	// 수정
 	@PutMapping("/api/modify/{personId}")
-	public JsonResult modify(@RequestBody PersonVo personVo) {
+	public JsonResult modify(@PathVariable(value="personId") PersonVo personVo) {
 		System.out.println("PhonebookController.modify()");
 		System.out.println(personVo);
 
@@ -57,7 +58,7 @@ public class PhonebookController {
 
 	// 수정폼
 	@GetMapping("/api/modifyform/{personId}")
-	public JsonResult modifyForm(@RequestBody int no, Model model) {
+	public JsonResult modifyForm(@PathVariable(value="personId") int no, Model model) {
 		System.out.println("PhonebookController.modifyForm()");
 		System.out.println(no);
 
