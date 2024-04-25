@@ -55,13 +55,12 @@ public class PhonebookController {
 
 	// 수정폼
 	@GetMapping("/api/modifyform/{personId}")
-	public JsonResult modifyForm(@PathVariable(value="personId") int no, Model model) {
+	public JsonResult modifyForm(@PathVariable(value="personId") int no) {
 		System.out.println("PhonebookController.modifyForm()");
 		System.out.println(no);
 
 		PersonVo personVo = phonebookService.exeModifyForm(no);
 
-		model.addAttribute("personVo", personVo);
 		return JsonResult.success(personVo);
 	}
 	
