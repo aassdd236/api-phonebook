@@ -62,5 +62,4 @@ public class PhonebookController {
 
 		return JsonResult.success(personVo);
 	}
-	
 }
