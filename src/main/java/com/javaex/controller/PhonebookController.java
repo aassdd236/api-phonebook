@@ -53,7 +53,7 @@ public class PhonebookController {
 	}
 
 	// 수정폼
-	@GetMapping("/api/modifyform")
+	@GetMapping("/api/list2")
 	public JsonResult modifyForm() {
 		System.out.println("PhonebookController.modifyForm()");
 
