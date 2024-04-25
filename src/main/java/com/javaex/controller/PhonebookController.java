@@ -25,9 +25,10 @@ public class PhonebookController {
 	public JsonResult list() {
 		System.out.println("PhonebookController.list()");
 
-		List<PersonVo> personList = phonebookService.exeList();
+		PersonVo personVo = phonebookService.exeModifyForm(2);
+		//List<PersonVo> personList = phonebookService.exeList();
 
-		return JsonResult.success(personList);
+		return JsonResult.success(personVo);
 	}
 	
 	@PostMapping("/api/write")
@@ -53,16 +54,14 @@ public class PhonebookController {
 	}
 
 	// 수정폼
-	@GetMapping("/api/list2")
-	public JsonResult modifyForm() {
+	@GetMapping("/api/modifyform/{personId}")
+	public JsonResult modifyForm(@PathVariable(value="personId") int no) {
 		System.out.println("PhonebookController.modifyForm()");
+		System.out.println(no);
 
-		List<PersonVo> personList = phonebookService.exeList();
-		System.out.println(personList);
-		return JsonResult.success(personList);
+		PersonVo personVo = phonebookService.exeModifyForm(no);
+		System.out.println(personVo);
+		return JsonResult.success(personVo);
 	}
-	
-	
-	
 	
 }
