@@ -44,6 +44,7 @@ public class PhonebookController {
 		return JsonResult.success(personVo);
 	}
 
+	
 	// 수정
 	@PutMapping("/api/modify/{personId}")
 	public JsonResult modify(@RequestBody PersonVo personVo) {
@@ -55,6 +56,7 @@ public class PhonebookController {
 		return JsonResult.success(personVo);    
 	}
 
+	
 	// 수정폼
 	@GetMapping("/api/modifyform/{personId}")
 	public JsonResult modifyForm(@RequestBody int no, Model model) {
