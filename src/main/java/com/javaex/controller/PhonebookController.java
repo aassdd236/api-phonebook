@@ -3,7 +3,6 @@ package com.javaex.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -54,13 +53,13 @@ public class PhonebookController {
 	}
 
 	// 수정폼
-	@GetMapping("/api/modifyform/{personId}")
+	@GetMapping("/api/modify/{personId}")
 	public JsonResult modifyForm(@PathVariable(value="personId") int no) {
 		System.out.println("PhonebookController.modifyForm()");
 		System.out.println(no);
 
 		PersonVo personVo = phonebookService.exeModifyForm(no);
-
+		System.out.println(personVo);
 		return JsonResult.success(personVo);
 	}
 	
