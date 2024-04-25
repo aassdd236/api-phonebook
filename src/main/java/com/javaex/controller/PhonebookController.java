@@ -25,11 +25,9 @@ public class PhonebookController {
 	public JsonResult list() {
 		System.out.println("PhonebookController.list()");
 
-		PersonVo personVo = phonebookService.exeModifyForm(2);
-		//List<PersonVo> personList = phonebookService.exeList();
+		List<PersonVo> personList = phonebookService.exeList();
 
-		
-		return JsonResult.success(personVo);
+		return JsonResult.success(personList);
 	}
 	
 	@PostMapping("/api/write")
@@ -61,7 +59,7 @@ public class PhonebookController {
 		System.out.println(no);
 
 		PersonVo personVo = phonebookService.exeModifyForm(no);
-		System.out.println(personVo);
+
 		return JsonResult.success(personVo);
 	}
 	
