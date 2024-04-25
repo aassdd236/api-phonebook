@@ -53,12 +53,11 @@ public class PhonebookController {
 	}
 
 	// 수정폼
-	@GetMapping("/api/modify/{personId}")
-	public JsonResult modifyForm(@PathVariable(value="personId") int no) {
+	@GetMapping("/api/modifyform")
+	public JsonResult modifyForm() {
 		System.out.println("PhonebookController.modifyForm()");
-		System.out.println(no);
 
-		PersonVo personVo = phonebookService.exeModifyForm(no);
+		PersonVo personVo = phonebookService.exeModifyForm(2);
 		System.out.println(personVo);
 		return JsonResult.success(personVo);
 	}
