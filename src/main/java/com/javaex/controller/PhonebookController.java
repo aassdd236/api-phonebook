@@ -57,9 +57,12 @@ public class PhonebookController {
 	public JsonResult modifyForm() {
 		System.out.println("PhonebookController.modifyForm()");
 
-		PersonVo personVo = phonebookService.exeModifyForm(2);
-		System.out.println(personVo);
-		return JsonResult.success(personVo);
+		List<PersonVo> personList = phonebookService.exeList();
+		System.out.println(personList);
+		return JsonResult.success(personList);
 	}
+	
+	
+	
 	
 }
