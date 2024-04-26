@@ -36,9 +36,9 @@ public class PhonebookController {
 
 		System.out.println(personVo.toString());
 
-		phonebookService.exeWrite(personVo);
+		int count = phonebookService.exeWrite(personVo);
 
-		return JsonResult.success(personVo);
+		return JsonResult.success(count);
 	}
 	
 	// 수정
